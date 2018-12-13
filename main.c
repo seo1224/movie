@@ -134,6 +134,12 @@ int main(int argc, char *argv[]) {
             printf("\nTotally %d movies are listed!\n",mark);
 		}
 		
+        else if(num==5)
+		{
+			printf("Good bye!\n");
+			exit(1); // while(1)문에서 빠져나감 
+		}
+		
 		else
 		{
 			printf("wrong number!\n");
