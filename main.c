@@ -50,5 +50,37 @@ int main(int argc, char *argv[]) {
     
     fclose(fp);
     
-	return 0;
+    while(1)
+	{	
+    	printf("\n>>MENU<<\n1.print all the movies\n2.search for specific country movies\n3.search for specific runtime movies\n4.search for specific score movies\n5.exit\n>>MENU<<\n");
+        printf("\n--select an option :");
+        scanf("%d",&num);
+        
+        getchar(); 
+        
+        now=(movinfo*)malloc(sizeof(movinfo));
+        now=first;
+        mark=0;
+        
+        if(num==1)
+		{
+        	while(now!=NULL) 
+			{
+        		printf("\nNAME : %s(%s)\n",now->name,now->madeIn);
+                printf("running time: %d, score: %f\n",now->runTime,now->score);
+                printf("----------------------");
+                mark++;
+                now = now->next;
+			} // movie.dat의 모든 영화 정보를 print하기 위한 while문  
+			
+            printf("\nTotally %d movies are listed!\n", mark);
+        }
+        
+		else
+		{
+			printf("wrong number!\n");
+		} // 1~5까지의 숫자가 입력되지 않을 경우 
+    }
+		    
+    return 0;
 }
