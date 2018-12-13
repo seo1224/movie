@@ -76,6 +76,27 @@ int main(int argc, char *argv[]) {
             printf("\nTotally %d movies are listed!\n", mark);
         }
         
+        else if(num==2)
+		{
+        	printf("select a country :");
+            scanf("%s",searchco);
+            getchar(); // country를 비교할 때 한 문자씩 비교하기 위한 함수 
+            
+			while(now!=NULL)
+			{ 
+            	if(!strcmp(now->madeIn,searchco)) 
+				{
+            		printf("\nNAME : %s(%s)\n",now->name,now->madeIn);
+                    printf("running time: %d, score: %f\n",now->runTime,now->score);
+                    printf("----------------------");
+                    
+                    mark++;
+				} // 문자열 비교해서 사용자가 입력한 나라만 출력시키는 if문 
+				now=now->next;
+			}	
+            printf("\nTotally %d movies are listed!\n", mark);
+		}
+		
 		else
 		{
 			printf("wrong number!\n");
