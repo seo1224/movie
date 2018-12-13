@@ -89,12 +89,30 @@ int main(int argc, char *argv[]) {
             		printf("\nNAME : %s(%s)\n",now->name,now->madeIn);
                     printf("running time: %d, score: %f\n",now->runTime,now->score);
                     printf("----------------------");
-                    
                     mark++;
-				} // 문자열 비교해서 사용자가 입력한 나라만 출력시키는 if문 
+				} // 문자열을 비교해서 사용자가 입력한 나라에 해당하는 영화만 출력시키는 if문 
 				now=now->next;
 			}	
             printf("\nTotally %d movies are listed!\n", mark);
+		}
+		
+		else if(num==3)
+		{
+			printf("select a runtime :");
+            scanf("%d",&searchrun);
+            while(now!=NULL)
+			{
+            	if(now->runTime==searchrun)
+				{
+					printf("\nNAME : %s(%s)\n",now->name,now->madeIn);
+                    printf("running time: %d, score: %f\n",now->runTime,now->score);
+                    printf("----------------------");
+                    mark++;
+				} // 수를 비교헤서 사용자가 입력한 상영시간에 해당하는 영화만 출력시키는 if문
+                now=now->next;
+			}
+			
+			printf("\nTotally %d movies are listed!\n",mark);
 		}
 		
 		else
@@ -102,6 +120,6 @@ int main(int argc, char *argv[]) {
 			printf("wrong number!\n");
 		} // 1~5까지의 숫자가 입력되지 않을 경우 
     }
-		    
+
     return 0;
 }
