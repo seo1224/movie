@@ -115,6 +115,25 @@ int main(int argc, char *argv[]) {
 			printf("\nTotally %d movies are listed!\n",mark);
 		}
 		
+		else if(num==4)
+		{
+			printf("select a score :");
+            scanf("%f",&searchsc);
+            while(now!=NULL)
+			{
+				if(now->score==searchsc)
+				{
+					printf("\nNAME : %s(%s)\n",now->name,now->madeIn);
+                    printf("running time: %d, score: %f\n",now->runTime,now->score);
+                    printf("----------------------");
+                    mark++;
+				} // 수를 비교헤서 사용자가 입력한 점수에 해당하는 영화만 출력시키는 if문
+                now=now->next;
+			}
+			
+            printf("\nTotally %d movies are listed!\n",mark);
+		}
+		
 		else
 		{
 			printf("wrong number!\n");
